@@ -20,4 +20,4 @@ export const GameProgressProvider: FC<GPProviderProps> = ({ children }) => {
             {children}
         </GameProgressContext.Provider>
     );
-}
+};

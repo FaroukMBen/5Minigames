@@ -8,7 +8,9 @@ export type GameProgress = {
     Game5: boolean;
 };
 
-export type SetProgressType = React.Dispatch<React.SetStateAction<GameProgress>>;
+export type SetProgressType = React.Dispatch<
+    React.SetStateAction<GameProgress>
+>;
 
 export type GameProgressContextType = {
     progress: GameProgress;
@@ -25,4 +27,3 @@ export const GameProgressContext = createContext<GameProgressContextType>({
     },
     setProgress: () => {},
 });
-

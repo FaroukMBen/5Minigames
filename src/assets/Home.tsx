@@ -26,11 +26,21 @@ function Home() {
         <div id="home">
             <h1>Welcome to the Game Series</h1>
             <p>Select a game from the menu to start playing!</p>
-            <Link id="Game1" to="/Game1">Game 1</Link>
-            <Link id="Game2" to="/Game2">Game 2</Link>
-            <Link id="Game3" to="/Game3">Game 3</Link>
-            <Link id="Game4" to="/Game4">Game 4</Link>
-            <Link id="Game5" to="/Game5">Game 5</Link>
+            <Link id="Game1" to="/Game1">
+                Game 1
+            </Link>
+            <Link id="Game2" to="/Game2">
+                Game 2
+            </Link>
+            <Link id="Game3" to="/Game3">
+                Game 3
+            </Link>
+            <Link id="Game4" to="/Game4">
+                Game 4
+            </Link>
+            <Link id="Game5" to="/Game5">
+                Game 5
+            </Link>
         </div>
     );
 }

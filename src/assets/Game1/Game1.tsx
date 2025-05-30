@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { GameProgressContext, type GameProgress } from "../../context/GameProgressContext";
+import {
+    GameProgressContext,
+    type GameProgress,
+} from "../../context/GameProgressContext";
 
 function Game1() {
     const answer = "Same as Luffy I will become the king of developers";
@@ -11,6 +14,13 @@ function Game1() {
 
     useEffect(() => {
         console.log("Game1 component mounted");
+        function RandomEncryption() {
+            const randomShift = Math.floor(Math.random() * 25) + 1; // Random shift between 1 and 25
+            setShift(randomShift);
+            const encryptedMessage = ceasarCipher(answer, randomShift);
+            return encryptedMessage;
+        }
+
         const encryptedMessage = RandomEncryption();
         const encryptedMessageElement = document.getElementById(
             "encryptedMessage"
@@ -31,13 +41,6 @@ function Game1() {
                 return char; // return the character wich is not included in the alphabet
             })
             .join("");
-    }
-
-    function RandomEncryption() {
-        const randomShift = Math.floor(Math.random() * 25) + 1; // Random shift between 1 and 25
-        setShift(randomShift);
-        const encryptedMessage = ceasarCipher(answer, randomShift);
-        return encryptedMessage;
     }
 
     function verifyDecryption() {
