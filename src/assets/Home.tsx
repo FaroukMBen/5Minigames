@@ -8,11 +8,16 @@ type HomeProps = {
 
 function Home({ progress }: HomeProps) {
     useEffect(() => {
-      if ('Game1' in progress && progress.Game1) {
-        console.log("Game 1 completed");
-        const game1 = document.getElementById("Game1") as HTMLDivElement;
-        game1.classList.add("completed");
-      }
+        console.log("Home component mounted");
+        const gameLinks = document.querySelectorAll("#home a");
+        gameLinks.forEach((link) => {
+            const gameId = link.id as keyof GameProgress;
+            if (progress[gameId]) {
+                link.classList.add("completed");
+            } else {
+                link.classList.remove("completed");
+            }
+        });
     }, []);
 
     return (

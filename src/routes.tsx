@@ -19,7 +19,7 @@ function AppRoutes( {progress, setProgress } : AppRoutesProps) {
         <Routes>
             <Route path="/" element={<Home progress={progress} />} />
             <Route path="/Game1" element={<Game1 setProgress={setProgress} />} />
-            <Route path="/Game2" element={<Game2 />} />
+            <Route path="/Game2" element={<Game2 setProgress={setProgress}/>} />
             <Route path="/Game3" element={<Game3 />} />
             <Route path="/Game4" element={<Game4 />} />
             <Route path="/Game5" element={<Game5 />} />

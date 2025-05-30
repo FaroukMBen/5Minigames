@@ -1,4 +1,4 @@
-a#Game1.completed{
+.completed{
     background-color: green;
     border: 2px solid yellow;
     box-shadow: 0 0 10px yellow;
