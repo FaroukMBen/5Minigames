@@ -3,3 +3,7 @@
     border: 2px solid yellow;
     box-shadow: 0 0 10px yellow;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+}
