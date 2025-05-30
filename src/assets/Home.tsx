@@ -1,12 +1,14 @@
 import { useEffect } from "react";
-import type { GameProgress } from "../App";
 import "../App.css";
 
-type HomeProps = {
-    progress: GameProgress;
-};
+import type { GameProgress } from "../context/GameProgressContext";
+import { useContext } from "react";
+import { GameProgressContext } from "../context/GameProgressContext";
+import { Link } from "react-router-dom";
 
-function Home({ progress }: HomeProps) {
+function Home() {
+    const { progress } = useContext(GameProgressContext);
+
     useEffect(() => {
         console.log("Home component mounted");
         const gameLinks = document.querySelectorAll("#home a");
@@ -18,17 +20,17 @@ function Home({ progress }: HomeProps) {
                 link.classList.remove("completed");
             }
         });
-    }, []);
+    }, [progress]);
 
     return (
         <div id="home">
             <h1>Welcome to the Game Series</h1>
             <p>Select a game from the menu to start playing!</p>
-            <a id="Game1" href="/Game1">Game 1</a>
-            <a id="Game2" href="/Game2">Game 2</a>
-            <a id="Game3" href="/Game3">Game 3</a>
-            <a id="Game4" href="/Game4">Game 4</a>
-            <a id="Game5" href="/Game5">Game 5</a>
+            <Link id="Game1" to="/Game1">Game 1</Link>
+            <Link id="Game2" to="/Game2">Game 2</Link>
+            <Link id="Game3" to="/Game3">Game 3</Link>
+            <Link id="Game4" to="/Game4">Game 4</Link>
+            <Link id="Game5" to="/Game5">Game 5</Link>
         </div>
     );
 }

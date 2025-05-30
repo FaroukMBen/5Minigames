@@ -1,18 +1,13 @@
-import { useEffect, useState } from "react";
-import type { GameProgress } from "../../App";
-import type { SetProgressType } from "../../App";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { GameProgressContext, type GameProgress } from "../../context/GameProgressContext";
 
-
-type Game1Props = {    
-    setProgress: SetProgressType;
-}; // It allows me to use the setProgress defined in the parent, I should probably use a context in the future
-
-
-function Game1({ setProgress }: Game1Props) {
+function Game1() {
     const answer = "Same as Luffy I will become the king of developers";
     const [decryptTry, setDecryptTry] = useState(0);
     const [shift, setShift] = useState(1);
+
+    const { setProgress } = useContext(GameProgressContext);
 
     useEffect(() => {
         console.log("Game1 component mounted");

@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import type { GameProgress, SetProgressType } from "../../App";
+import { GameProgressContext } from "../../context/GameProgressContext";
+import type { GameProgress } from "../../context/GameProgressContext";
 
-type Game1Props = {
-    setProgress: SetProgressType;
-};
+function Game2() {
 
-function Game2({ setProgress }: Game1Props) {
+    const { setProgress } = useContext(GameProgressContext);
 
     type TriviaQuestions = [string, string[], number][];
 
