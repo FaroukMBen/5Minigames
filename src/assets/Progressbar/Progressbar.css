@@ -1,0 +1,38 @@
+#progressbarContainer {
+    background-color: #323232;
+    border-radius: 10px;
+    margin: 50px auto;
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60vw;
+    z-index: 1000;
+}
+
+#progressbar {
+    background-color: #ffbe1a;
+    color: #cfcfcf;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    width: 0;
+    transition: width 0.5s ease-in-out;
+    z-index: 1;
+}
+
+#progressbarContainer .verticalLine {
+    background-color: #656565;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 2px;
+    z-index: 2;
+}
+
+#progressbarContainer .verticalLine:first-child, #progressbarContainer .verticalLine:last-child{
+    display: none;
+}
