@@ -1,0 +1,40 @@
+#home{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin: 3em;
+}
+
+#home div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.reactLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #cfcfcf;
+    border-radius: 15px;
+    color: #cfcfcf;
+    height: 120px;
+    margin: 0 15px 30px;
+    width: 120px;
+    transition: all 0.3s ease;
+    font-size: 3em;
+}
+
+.reactLink:hover {
+    box-shadow: 0 0 20px 2px #ffbe1a;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.reactLink.completed{
+    border-color: #ffbe1a;
+    color: #ffbe1a;
+    box-shadow: 0 0 20px 2px #ffbe1a;
+}
