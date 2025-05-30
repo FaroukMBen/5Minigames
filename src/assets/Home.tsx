@@ -1,10 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import "../App.css";
-
-import type { GameProgress } from "../context/GameProgressContext";
-import { useContext } from "react";
-import { GameProgressContext } from "../context/GameProgressContext";
+import "./Home.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faBrain,
+    faDice,
+    faPuzzlePiece,
+    faQuestion,
+    faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
+
+import type { GameProgress } from "../context/GameprogressContext";
+import { GameProgressContext } from "../context/GameprogressContext";
 
 function Home() {
     const { progress } = useContext(GameProgressContext);
@@ -24,23 +32,25 @@ function Home() {
 
     return (
         <div id="home">
-            <h1>Welcome to the Game Series</h1>
-            <p>Select a game from the menu to start playing!</p>
-            <Link id="Game1" to="/Game1">
-                Game 1
-            </Link>
-            <Link id="Game2" to="/Game2">
-                Game 2
-            </Link>
-            <Link id="Game3" to="/Game3">
-                Game 3
-            </Link>
-            <Link id="Game4" to="/Game4">
-                Game 4
-            </Link>
-            <Link id="Game5" to="/Game5">
-                Game 5
-            </Link>
+            <div>
+                <Link className="reactLink" id="Game1" to="/Game1">
+                    <FontAwesomeIcon icon={faBrain} />
+                </Link>
+                <Link className="reactLink" id="Game2" to="/Game2">
+                    <FontAwesomeIcon icon={faDice} />
+                </Link>
+                <Link className="reactLink" id="Game3" to="/Game3">
+                    <FontAwesomeIcon icon={faPuzzlePiece} />
+                </Link>
+            </div>
+            <div>
+                <Link className="reactLink" id="Game4" to="/Game4">
+                    <FontAwesomeIcon icon={faQuestion} />
+                </Link>
+                <Link className="reactLink" id="Game5" to="/Game5">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </Link>
+            </div>
         </div>
     );
 }
