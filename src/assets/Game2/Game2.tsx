@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { GameProgressContext } from "../../context/GameProgressContext";
-import type { GameProgress } from "../../context/GameProgressContext";
+import { GameProgressContext } from "../../context/GameprogressContext";
+import type { GameProgress } from "../../context/GameprogressContext";
 
 function Game2() {
     const { setProgress } = useContext(GameProgressContext);

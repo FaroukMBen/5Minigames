@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
     GameProgressContext,
     type GameProgress,
-} from "../../context/GameProgressContext";
+} from "../../context/GameprogressContext";
 
 function Game1() {
     const answer = "Same as Luffy I will become the king of developers";
@@ -13,7 +13,6 @@ function Game1() {
     const { setProgress } = useContext(GameProgressContext);
 
     useEffect(() => {
-        console.log("Game1 component mounted");
         function RandomEncryption() {
             const randomShift = Math.floor(Math.random() * 25) + 1; // Random shift between 1 and 25
             setShift(randomShift);
@@ -82,7 +81,7 @@ function Game1() {
     return (
         <div id="game1">
             <div>
-                <h1>Decryption Challenge</h1>
+                <h1>Game 1: Decryption Challenge</h1>
                 <p>
                     Unlock the secret! Decode the encrypted message below to
                     progress.
