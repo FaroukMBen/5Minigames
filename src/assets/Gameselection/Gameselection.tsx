@@ -1,6 +1,5 @@
 import { useEffect, useContext } from "react";
-import "../App.css";
-import "./Home.css";
+import "./Gameselection.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,15 +10,15 @@ import {
     faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
-import type { GameProgress } from "../context/GameprogressContext";
-import { GameProgressContext } from "../context/GameprogressContext";
+import type { GameProgress } from "../../context/GameprogressContext";
+import { GameProgressContext } from "../../context/GameprogressContext";
 
 function Home() {
     const { progress } = useContext(GameProgressContext);
 
     useEffect(() => {
         console.log("Home component mounted");
-        const gameLinks = document.querySelectorAll("#home a");
+        const gameLinks = document.querySelectorAll("#gameSelection a");
         gameLinks.forEach((link) => {
             const gameId = link.id as keyof GameProgress;
             if (progress[gameId]) {
@@ -31,7 +30,7 @@ function Home() {
     }, [progress]);
 
     return (
-        <div id="home">
+        <div id="gameSelection">
             <div>
                 <Link className="reactLink" id="Game1" to="/Game1">
                     <FontAwesomeIcon icon={faBrain} />

@@ -1,4 +1,4 @@
-#home{
+#gameSelection{
     display: grid;
     gap: 20px;
     padding: 20px;
@@ -6,7 +6,7 @@
     margin: 3em;
 }
 
-#home div {
+#gameSelection div {
     display: flex;
     flex-direction: row;
     align-items: center;
