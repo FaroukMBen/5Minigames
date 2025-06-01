@@ -42,6 +42,12 @@ function Game3() {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
+            if (result.classList.contains("negative")) {
+                result.classList.remove("negative");
+            }
+            if (!result.classList.contains("positive")) {
+                result.classList.add("positive");
+            }
             result.textContent = "Congratulations! You found all pairs!";
             setProgress((prev: GameProgress) => ({
                 ...prev,

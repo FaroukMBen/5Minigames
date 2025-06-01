@@ -58,11 +58,17 @@
     font-size: 1em;
     background-color: #cfcfcf;
     margin: 20px 0;
+    transition: border-color 0.3s ease;
 }
 
 #game1 input:hover {
     outline: none;
     border-color: #000000;
+}
+
+#game1 input:focus {
+    outline: none;
+    border-color: #ffbe1a;
 }
 
 #game1 button {
@@ -79,8 +85,4 @@
 #game1 button:hover {
     background-color: #caa770;
     transform: scale(1.05);
-}
-
-#game1 #result {
-    color: #ff0000;
 }

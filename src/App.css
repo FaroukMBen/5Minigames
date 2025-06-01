@@ -16,3 +16,11 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+#result.negative {
+    color: #f00;
+}
+
+#result.positive {
+    color: #ffbe1a;
+}

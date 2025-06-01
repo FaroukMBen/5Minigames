@@ -48,12 +48,29 @@ function Game1() {
         const decryptedMessage = document.getElementById(
             "DecryptionInput"
         ) as HTMLInputElement;
+        const result = document.getElementById(
+            "result"
+        ) as HTMLParagraphElement;
         if (decryptedMessage.value == answer && decryptTry < 15) {
+            if (result.classList.contains("negative")) {
+                result.classList.remove("negative");
+            }
+            if (!result.classList.contains("positive")) {
+                result.classList.add("positive");
+            }
+            result.textContent =
+                "Buggy the Clown laughs: 'You... did it? Whatever, I lied anyway! I don't have your friend! MOUHAHAHA!'";
             setProgress((prev: GameProgress) => ({ ...prev, Game1: true }));
         } else if (decryptedMessage.value == answer) {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
+            if (result.classList.contains("positive")) {
+                result.classList.remove("positive");
+            }
+            if (!result.classList.contains("negative")) {
+                result.classList.add("negative");
+            }
             result.textContent =
                 "Buggy the Clown laughs: 'You are hopeless! I will keep your friend forever!'";
             setProgress((prev: GameProgress) => ({ ...prev, Game1: true }));
@@ -61,9 +78,12 @@ function Game1() {
                 "It seems you have deciphered the message, but unfortunately, Buggy the Clown has taken your friend forever!"
             );
         } else {
-            const result = document.getElementById(
-                "result"
-            ) as HTMLParagraphElement;
+            if (result.classList.contains("positive")) {
+                result.classList.remove("positive");
+            }
+            if (!result.classList.contains("negative")) {
+                result.classList.add("negative");
+            }
             const possibleFeed: [string, number][] = [
                 [
                     "Buggy the Clown laughs: 'Wrong! Try again, little pirate!'",
@@ -98,6 +118,12 @@ function Game1() {
             }
 
             if (decryptTry >= 15) {
+                if (result.classList.contains("positive")) {
+                    result.classList.remove("positive");
+                }
+                if (!result.classList.contains("negative")) {
+                    result.classList.add("negative");
+                }
                 result.textContent =
                     "Buggy the Clown laughs: 'You are hopeless! I will keep your friend forever!'";
                 setProgress((prev: GameProgress) => ({ ...prev, Game1: true }));

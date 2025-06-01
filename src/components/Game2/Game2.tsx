@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import { GameProgressContext } from "../../context/GameprogressContext";
 import type { GameProgress } from "../../context/GameprogressContext";
+import "./Game2.css";
 
 function Game2() {
     const { setProgress } = useContext(GameProgressContext);
-
     type TriviaQuestions = [string, string[], number][];
 
     const triviaQuestions: TriviaQuestions = [
@@ -51,7 +50,8 @@ function Game2() {
     function checkAnswer(
         triviaQuestions: TriviaQuestions,
         questionNumber: number,
-        selectedOption: number
+        selectedOption: number,
+        li: React.MouseEvent<HTMLLIElement, MouseEvent>
     ) {
         const result = document.getElementById(
             "result"
@@ -60,38 +60,79 @@ function Game2() {
             currentQuestion >= triviaQuestions.length - 1 &&
             selectedOption === triviaQuestions[questionNumber][2]
         ) {
+            if (result.classList.contains("negative")) {
+                result.classList.remove("negative");
+            }
+            if (!result.classList.contains("positive")) {
+                result.classList.add("positive");
+            }
             result.textContent =
                 "Congratulations! You've completed the trivia challenge!";
-            const questionContainer = document.getElementById(
-                "question"
-            ) as HTMLDivElement;
-            questionContainer.style.display = "none";
-
+            const liElement = li.target as HTMLLIElement;
+            const description = document.getElementById(
+                "description"
+            ) as HTMLParagraphElement;
+            description.textContent =
+                "I guess you did it, huh? Well, you can go now.";
+            liElement.classList.add("correct");
             setProgress((prev: GameProgress) => ({ ...prev, Game2: true }));
+            setTimeout(() => {
+                liElement.classList.remove("correct");
+                const questionContainer = document.getElementById(
+                    "question"
+                ) as HTMLDivElement;
+                questionContainer.classList.add("hidden");
+            }, 1000);
         } else if (selectedOption === triviaQuestions[questionNumber][2]) {
+            if (result.classList.contains("negative")) {
+                result.classList.remove("negative");
+            }
+            if (!result.classList.contains("positive")) {
+                result.classList.add("positive");
+            }
             result.textContent = "Correct answer!";
-            setCurrentQuestion(questionNumber + 1);
+            const liElement = li.target as HTMLLIElement;
+            liElement.classList.add("correct");
+            setTimeout(() => {
+                liElement.classList.remove("correct");
+                setCurrentQuestion(questionNumber + 1);
+            }, 1000);
         } else {
+            if (result.classList.contains("positive")) {
+                result.classList.remove("positive");
+            }
+            if (!result.classList.contains("negative")) {
+                result.classList.add("negative");
+            }
             result.textContent = "Incorrect answer. Try again!";
+            const liElement = li.target as HTMLLIElement;
+            liElement.classList.add("incorrect");
+            setTimeout(() => {
+                liElement.classList.remove("incorrect");
+            }, 1000);
         }
     }
 
     return (
         <div id="game2" className="game-container">
             <h1>Game 2: Trivia Challenge</h1>
+            <p id="description">
+                You are in the Trivia Challenge! Answer the questions correctly
+                to win !
+            </p>
             <div id="question">
-                <p>Answer the following questions correctly to win!</p>
                 <h2>{triviaQuestions[currentQuestion][0]}</h2>
                 <ul>
                     {triviaQuestions[currentQuestion][1].map(
                         (option, index) => (
                             <li
                                 key={index}
-                                onClick={() =>
+                                onClick={(e) =>
                                     checkAnswer(
                                         triviaQuestions,
                                         currentQuestion,
-                                        index
+                                        index,
+                                        e
                                     )
                                 }
                             >
@@ -102,7 +143,6 @@ function Game2() {
                 </ul>
             </div>
             <p id="result"></p>
-            <Link to="/">exit</Link>
         </div>
     );
 }

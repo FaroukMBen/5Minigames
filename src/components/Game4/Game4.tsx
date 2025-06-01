@@ -27,6 +27,12 @@ function Game4() {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
+            if (result.classList.contains("negative")) {
+                result.classList.remove("negative");
+            }
+            if (!result.classList.contains("positive")) {
+                result.classList.add("positive");
+            }
             result.textContent = "Wow, well done! You got it right!";
 
             setProgress((prev: GameProgress) => ({
@@ -38,6 +44,12 @@ function Game4() {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
+            if (result.classList.contains("positive")) {
+                result.classList.remove("positive");
+            }
+            if (!result.classList.contains("negative")) {
+                result.classList.add("negative");
+            }
             result.textContent = "Nah uh, try again.";
             setTimeout(() => {
                 target.classList.remove("false");
