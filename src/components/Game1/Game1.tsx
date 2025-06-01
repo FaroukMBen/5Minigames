@@ -108,7 +108,7 @@ function Game1() {
         }
     }
     return (
-        <div id="game1">
+        <div id="game1" className="game-container">
             <h1>Game 1: Decryption Challenge</h1>
             <p>
                 Your best friend has been kidnapped by the evil

@@ -46,7 +46,7 @@ function Game4() {
     }
 
     return (
-        <div className="game4">
+        <div id="game4" className="game-container">
             <h1>Game 4: Riddle Reveal</h1>
             <p>
                 I’m invisible but I control your code’s fate, If I’m not handled

@@ -77,7 +77,7 @@ function Game2() {
     }
 
     return (
-        <div className="game2">
+        <div id="game2" className="game-container">
             <h1>Game 2: Trivia Challenge</h1>
             <div id="question">
                 <p>Answer the following questions correctly to win!</p>
