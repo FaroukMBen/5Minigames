@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import {
     GameProgressContext,
     type GameProgress,
 } from "../../context/GameprogressContext";
+import "./Game1.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function Game1() {
-    const answer = "Same as Luffy I will become the king of developers";
+    const answer = "If you want to be a clown, you have to be funny";
     const [decryptTry, setDecryptTry] = useState(0);
     const [shift, setShift] = useState(1);
 
@@ -46,58 +48,87 @@ function Game1() {
         const decryptedMessage = document.getElementById(
             "DecryptionInput"
         ) as HTMLInputElement;
-        if (decryptedMessage.value == answer) {
+        if (decryptedMessage.value == answer && decryptTry < 15) {
             setProgress((prev: GameProgress) => ({ ...prev, Game1: true }));
+        } else if (decryptedMessage.value == answer) {
+            const result = document.getElementById(
+                "result"
+            ) as HTMLParagraphElement;
+            result.textContent =
+                "Buggy the Clown laughs: 'You are hopeless! I will keep your friend forever!'";
+            setProgress((prev: GameProgress) => ({ ...prev, Game1: true }));
+            alert(
+                "It seems you have deciphered the message, but unfortunately, Buggy the Clown has taken your friend forever!"
+            );
         } else {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
             const possibleFeed: [string, number][] = [
-                ["NOPE, try again", 0],
-                ["Keep trying buddy !", 1],
-                ["Keep trying, to fail is a step to win", 2],
                 [
-                    "Don't you dare to give up, never give up on your dreams !",
+                    "Buggy the Clown laughs: 'Wrong! Try again, little pirate!'",
+                    0,
+                ],
+                ["Buggy grins: 'Not even close! You'll have to do better!'", 1],
+                [
+                    "Buggy taunts: 'Persistence won't save your friend! Try again!'",
+                    2,
+                ],
+                [
+                    "Buggy sneers: 'Giving up already? Every mistake makes me stronger!'",
                     3,
                 ],
                 [
-                    "Because you didn't give up, I will give you the shift on the next try",
+                    "Buggy whispers: 'Maybe you need a hint? The shift number is coming soon...'",
                     4,
                 ],
                 [
-                    `It is encrypted with a Caesar cipher, the shift is  ${shift}`,
+                    `Buggy reveals: 'Fine! The Caesar cipher shift is ${shift}!'`,
                     5,
                 ],
             ];
+            console.log(`Decryption attempt ${decryptTry}`);
             if (decryptTry < possibleFeed.length) {
                 result.textContent = possibleFeed[decryptTry][0];
                 setDecryptTry(decryptTry + 1);
             } else {
                 const randomIndex = Math.floor(Math.random() * 3) + 1;
                 result.textContent = possibleFeed[randomIndex][0];
+                setDecryptTry(decryptTry + 1);
+            }
+
+            if (decryptTry >= 15) {
+                result.textContent =
+                    "Buggy the Clown laughs: 'You are hopeless! I will keep your friend forever!'";
+                setProgress((prev: GameProgress) => ({ ...prev, Game1: true }));
+                alert(
+                    "You won either way, but... At what cost? Buggy the Clown has taken your friend forever!"
+                );
             }
         }
     }
     return (
         <div id="game1">
-            <div>
-                <h1>Game 1: Decryption Challenge</h1>
-                <p>
-                    Unlock the secret! Decode the encrypted message below to
-                    progress.
-                </p>
-                <p id="encryptedMessage"></p>
-                <input
-                    type="text"
-                    name="DecryptionInput"
-                    id="DecryptionInput"
-                    placeholder="Decipher the message here"
-                />
-                <button onClick={verifyDecryption}>Decrypt and Submit</button>
-                <p id="result"></p>
+            <h1>Game 1: Decryption Challenge</h1>
+            <p>
+                Your best friend has been kidnapped by the evil
+                <strong> Buggy the Clown</strong>. He has left you a message. If
+                you want your friend back, you better decipher quick.
+            </p>
+            <div id="encryptedMessageContainer">
+                <div>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    <p id="encryptedMessage"></p>
+                </div>
             </div>
-
-            <Link to="/">exit</Link>
+            <input
+                type="text"
+                name="DecryptionInput"
+                id="DecryptionInput"
+                placeholder="Decipher the message here"
+            />
+            <button onClick={verifyDecryption}>Decrypt and Submit</button>
+            <p id="result"></p>
         </div>
     );
 }
