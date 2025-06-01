@@ -1,9 +1,11 @@
-#cardsContainer{
+#cardsContainer {
     display: grid;
     gap: 16px;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     margin: 20px auto;
     max-width: 280px;
+    justify-content: center;
 }
 
 .card {
@@ -21,7 +23,8 @@
     justify-content: center;
 }
 
-.card.flipped, .card:hover {
+.card.flipped,
+.card:hover {
     background-color: #212121;
     border-color: #ffbe1a;
     color: #ffbe1a;
@@ -29,4 +32,10 @@
 
 .card.matched {
     box-shadow: 0 0 5px #ffbe1a;
+    background-color: #ffbe1a;
+}
+
+.card.matched span {
+    background-color: #927939;
+    border-radius: 10px;
 }

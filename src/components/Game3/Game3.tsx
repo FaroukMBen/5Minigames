@@ -154,7 +154,6 @@ function Game3() {
                 ))}
             </div>
             <p id="result"></p>
-            <Link to="/">exit</Link>
         </div>
     );
 }
