@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import "./Game3.css";
-import { Link } from "react-router-dom";
 import {
     GameProgressContext,
     type GameProgress,

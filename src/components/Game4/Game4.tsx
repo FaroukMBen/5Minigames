@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Game4.css";
 import { useContext } from "react";
 import {
@@ -83,7 +82,6 @@ function Game4() {
                 ))}
             </div>
             <p id="result"></p>
-            <Link to="/">exit</Link>
         </div>
     );
 }

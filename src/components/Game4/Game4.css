@@ -1,34 +1,39 @@
-#riddleOptions{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+#game4 p {
+  max-width: 50vw;
+  text-align: center;
+}
+
+#riddleOptions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .riddleOption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #cfcfcf;
-    border: 2px solid #212121;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    height: 100px;
-    width: 100px;
-    transition-duration: 0.25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cfcfcf;
+  border: 2px solid #212121;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.25s;
 }
 
 .riddleOption:hover {
-    background-color: #212121;
-    border-color: #ffbe1a;
-    color : #ffffff;
+  background-color: #212121;
+  border-color: #ffbe1a;
+  color: #ffffff;
 }
 
 .riddleOption.selected {
-    background-color: #ffbe1a;
-    border-color: #212121;
-    color: #212121;
+  background-color: #ffbe1a;
+  border-color: #212121;
+  color: #212121;
 }
 
 .riddleOption span {
@@ -65,13 +70,13 @@
 }
 
 .riddleOption.correct {
-    background-color: #ffbe1a;
-    border-color: #ffbe1a;
-    box-shadow: 0 0 10px #ffbe1a;
+  background-color: #ffbe1a;
+  border-color: #ffbe1a;
+  box-shadow: 0 0 10px #ffbe1a;
 }
 
-.riddleOption.false{
-    border-color: #ff0000;
-    box-shadow: 0 0 10px #ff0000;
-    color: #ffffff;
+.riddleOption.false {
+  border-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+  color: #ffffff;
 }
