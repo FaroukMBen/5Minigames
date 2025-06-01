@@ -136,10 +136,10 @@ function Game5() {
                 ))}
             </div>
             <h3>Selected Word: {selectedWord}</h3>
-            <button id="submitWord" onClick={checkWord}>
+            <button id="submit-word" onClick={checkWord}>
                 Submit Word
             </button>
-            <div id="foundWordsContainer">
+            <div id="found-words-container">
                 <h3>Words to find:</h3>
                 <div className="words-to-find-grid">
                     {wordsToFind.map((word) => (

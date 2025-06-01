@@ -3,14 +3,14 @@
   text-align: center;
 }
 
-#riddleOptions {
+#riddle-options {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
 }
 
-.riddleOption {
+.riddle-option {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,59 +24,59 @@
   transition-duration: 0.25s;
 }
 
-.riddleOption:hover {
+.riddle-option:hover {
   background-color: #212121;
   border-color: #ffbe1a;
-  color: #ffffff;
+  color: #fff;
 }
 
-.riddleOption.selected {
+.riddle-option.selected {
   background-color: #ffbe1a;
   border-color: #212121;
   color: #212121;
 }
 
-.riddleOption span {
+.riddle-option span {
   position: absolute;
   transition: all 0.4s ease;
   transform: translateY(0);
   opacity: 1;
 }
 
-.riddleOption .emoji {
+.riddle-option .emoji {
   z-index: 2;
 }
 
-.riddleOption .answer {
+.riddle-option .answer {
   opacity: 0;
   transform: translateY(20px);
-  background: rgba(0, 0, 0, 0.75);
+  background: rgb(0 0 0 / 75%);
   color: #fff;
   padding: 4px 8px;
   border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 40%);
   z-index: 1;
 }
 
-.riddleOption:hover .emoji {
+.riddle-option:hover .emoji {
   transform: translateY(-20px);
   opacity: 0;
 }
 
-.riddleOption:hover .answer {
+.riddle-option:hover .answer {
   transform: translateY(0);
   opacity: 1;
   z-index: 3;
 }
 
-.riddleOption.correct {
+.riddle-option.correct {
   background-color: #ffbe1a;
   border-color: #ffbe1a;
   box-shadow: 0 0 10px #ffbe1a;
 }
 
-.riddleOption.false {
-  border-color: #ff0000;
-  box-shadow: 0 0 10px #ff0000;
-  color: #ffffff;
+.riddle-option.false {
+  border-color: #f00;
+  box-shadow: 0 0 10px #f00;
+  color: #fff;
 }

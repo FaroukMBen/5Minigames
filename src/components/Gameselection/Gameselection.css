@@ -1,4 +1,4 @@
-#gameSelection{
+#game-selection {
     display: grid;
     gap: 20px;
     padding: 20px;
@@ -6,14 +6,14 @@
     margin: 3em;
 }
 
-#gameSelection div {
+#game-selection div {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.reactLink {
+.react-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,13 +27,12 @@
     font-size: 3em;
 }
 
-.reactLink:hover {
+.react-link:hover {
     box-shadow: 0 0 20px 2px #ffbe1a;
-    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-.reactLink.completed{
+.react-link.completed {
     border-color: #ffbe1a;
     color: #ffbe1a;
     box-shadow: 0 0 20px 2px #ffbe1a;

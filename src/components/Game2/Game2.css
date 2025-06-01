@@ -27,7 +27,7 @@ li {
 
 li:hover {
     border-color: #ffbe1a;
-    background-color: #444444;
+    background-color: #444;
 }
 
 li.correct {
@@ -38,6 +38,6 @@ li.correct {
 }
 
 li.incorrect {
-    border-color: #ff0000;
-    box-shadow: 0 0 20px 2px #ff0000;
+    border-color: #f00;
+    box-shadow: 0 0 20px 2px #f00;
 }

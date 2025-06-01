@@ -7,7 +7,7 @@ function Header() {
     const location = useLocation();
 
     return (
-        <header id={location.pathname !== "/" ? "headerInGame" : undefined}>
+        <header id={location.pathname !== "/" ? "header-in-game" : undefined}>
             {location.pathname !== "/" && (
                 <Link to="/">
                     <FontAwesomeIcon icon={faChevronLeft} />

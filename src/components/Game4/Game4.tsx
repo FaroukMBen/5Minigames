@@ -65,11 +65,11 @@ function Game4() {
                 small, Without me, teamwork would surely fall. <br />
                 What am I?
             </p>
-            <div id="riddleOptions">
+            <div id="riddle-options">
                 {riddleOptions.map(([emoji, answer], index) => (
                     <div
                         key={index}
-                        className="riddleOption"
+                        className="riddle-option"
                         onClick={(element) => {
                             handleRiddleReveal(element, answer);
                         }}

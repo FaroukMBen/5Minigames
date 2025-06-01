@@ -11,10 +11,10 @@ function Progressbar() {
     const percentage = (completedGames / totalGames) * 100;
 
     return (
-        <div id="progressbarContainer">
+        <div id="progressbar-container">
             {Array.from({ length: totalGames + 1 }).map((_, i) => (
                 <div
-                    className="verticalLine"
+                    className="vertical-line"
                     key={i}
                     style={{
                         left: `${(i / totalGames) * 100}%`,

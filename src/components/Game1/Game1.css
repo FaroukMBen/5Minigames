@@ -18,22 +18,22 @@
     text-align: center;
 }
 
-#game1 #encryptedMessageContainer {
+#game1 #encrypted-message-container {
     background-image: url('../../assets/images/clownbackgroundpattern.png');
     background-size: 30dvh;
     padding: 2dvh;
     border-radius: 10px;
     width: 30vw;
-    border: 2px solid #000000;
+    border: 2px solid #000;
 }
 
-#game1 #encryptedMessage,
-#game1 #encryptedMessageContainer div svg {
-    color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+#game1 #encrypted-message,
+#game1 #encrypted-message-container div svg {
+    color: #fff;
+    text-shadow: 1px 1px 3px rgb(0 0 0 / 70%);
 }
 
-#game1 #encryptedMessageContainer div {
+#game1 #encrypted-message-container div {
     justify-self: center;
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@
 
 #game1 input:hover {
     outline: none;
-    border-color: #000000;
+    border-color: #000;
 }
 
 #game1 input:focus {

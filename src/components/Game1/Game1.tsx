@@ -24,7 +24,7 @@ function Game1() {
 
         const encryptedMessage = RandomEncryption();
         const encryptedMessageElement = document.getElementById(
-            "encryptedMessage"
+            "encrypted-message"
         ) as HTMLParagraphElement;
         encryptedMessageElement.textContent = encryptedMessage;
     }, []);
@@ -141,10 +141,10 @@ function Game1() {
                 <strong> Buggy the Clown</strong>. He has left you a message. If
                 you want your friend back, you better decipher quick.
             </p>
-            <div id="encryptedMessageContainer">
+            <div id="encrypted-message-container">
                 <div>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    <p id="encryptedMessage"></p>
+                    <p id="encrypted-message"></p>
                 </div>
             </div>
             <input

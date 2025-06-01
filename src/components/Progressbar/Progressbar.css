@@ -1,4 +1,4 @@
-#progressbarContainer {
+#progressbar-container {
     background-color: #323232;
     border-radius: 10px;
     margin: 50px auto;
@@ -20,7 +20,7 @@
     z-index: 1;
 }
 
-#progressbarContainer .verticalLine {
+#progressbar-container .vertical-line {
     background-color: #656565;
     bottom: 0;
     content: "";
@@ -30,6 +30,7 @@
     z-index: 2;
 }
 
-#progressbarContainer .verticalLine:first-child, #progressbarContainer .verticalLine:last-child{
+#progressbar-container .vertical-line:first-child,
+#progressbar-container .vertical-line:last-child {
     display: none;
 }

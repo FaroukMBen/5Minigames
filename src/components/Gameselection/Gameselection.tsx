@@ -17,8 +17,7 @@ function Home() {
     const { progress } = useContext(GameProgressContext);
 
     useEffect(() => {
-        console.log("Home component mounted");
-        const gameLinks = document.querySelectorAll("#gameSelection a");
+        const gameLinks = document.querySelectorAll("#game-selection a");
         gameLinks.forEach((link) => {
             const gameId = link.id as keyof GameProgress;
             if (progress[gameId]) {
@@ -30,23 +29,23 @@ function Home() {
     }, [progress]);
 
     return (
-        <div id="gameSelection">
+        <div id="game-selection">
             <div>
-                <Link className="reactLink" id="Game1" to="/Game1">
+                <Link className="react-link" id="Game1" to="/Game1">
                     <FontAwesomeIcon icon={faBrain} />
                 </Link>
-                <Link className="reactLink" id="Game2" to="/Game2">
+                <Link className="react-link" id="Game2" to="/Game2">
                     <FontAwesomeIcon icon={faDice} />
                 </Link>
-                <Link className="reactLink" id="Game3" to="/Game3">
+                <Link className="react-link" id="Game3" to="/Game3">
                     <FontAwesomeIcon icon={faPuzzlePiece} />
                 </Link>
             </div>
             <div>
-                <Link className="reactLink" id="Game4" to="/Game4">
+                <Link className="react-link" id="Game4" to="/Game4">
                     <FontAwesomeIcon icon={faQuestion} />
                 </Link>
-                <Link className="reactLink" id="Game5" to="/Game5">
+                <Link className="react-link" id="Game5" to="/Game5">
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </Link>
             </div>

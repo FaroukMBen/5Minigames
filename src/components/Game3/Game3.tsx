@@ -131,7 +131,7 @@ function Game3() {
                 Welcome to the memory card game! Flip the cards to find matching
                 pairs. Can you remember where they are?
             </p>
-            <div id="cardsContainer">
+            <div id="cards-container">
                 {deck.map((emojie, index) => (
                     <div
                         className={`card ${
