@@ -1,5 +1,26 @@
-.completed{
-    background-color: green;
-    border: 2px solid yellow;
-    box-shadow: 0 0 10px yellow;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    min-height: 65vh;
+    background-color: #212121;
+    color: #cfcfcf;
+    margin: 0 10vw;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#result.negative {
+    color: #f00;
+}
+
+#result.positive {
+    color: #ffbe1a;
 }

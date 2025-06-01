@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./Game4.css";
 import { useContext } from "react";
 import {
@@ -27,6 +26,12 @@ function Game4() {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
+            if (result.classList.contains("negative")) {
+                result.classList.remove("negative");
+            }
+            if (!result.classList.contains("positive")) {
+                result.classList.add("positive");
+            }
             result.textContent = "Wow, well done! You got it right!";
 
             setProgress((prev: GameProgress) => ({
@@ -38,6 +43,12 @@ function Game4() {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
+            if (result.classList.contains("positive")) {
+                result.classList.remove("positive");
+            }
+            if (!result.classList.contains("negative")) {
+                result.classList.add("negative");
+            }
             result.textContent = "Nah uh, try again.";
             setTimeout(() => {
                 target.classList.remove("false");
@@ -46,7 +57,7 @@ function Game4() {
     }
 
     return (
-        <div className="game4">
+        <div id="game4" className="game-container">
             <h1>Game 4: Riddle Reveal</h1>
             <p>
                 I’m invisible but I control your code’s fate, If I’m not handled
@@ -54,11 +65,11 @@ function Game4() {
                 small, Without me, teamwork would surely fall. <br />
                 What am I?
             </p>
-            <div id="riddleOptions">
+            <div id="riddle-options">
                 {riddleOptions.map(([emoji, answer], index) => (
                     <div
                         key={index}
-                        className="riddleOption"
+                        className="riddle-option"
                         onClick={(element) => {
                             handleRiddleReveal(element, answer);
                         }}
@@ -71,7 +82,6 @@ function Game4() {
                 ))}
             </div>
             <p id="result"></p>
-            <Link to="/">exit</Link>
         </div>
     );
 }

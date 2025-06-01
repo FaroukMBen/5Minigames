@@ -1,0 +1,39 @@
+#game-selection {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin: 3em;
+}
+
+#game-selection div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.react-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #cfcfcf;
+    border-radius: 15px;
+    color: #cfcfcf;
+    height: 120px;
+    margin: 0 15px 30px;
+    width: 120px;
+    transition: all 0.3s ease;
+    font-size: 3em;
+}
+
+.react-link:hover {
+    box-shadow: 0 0 20px 2px #ffbe1a;
+    transform: scale(1.1);
+}
+
+.react-link.completed {
+    border-color: #ffbe1a;
+    color: #ffbe1a;
+    box-shadow: 0 0 20px 2px #ffbe1a;
+}

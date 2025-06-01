@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import "./Game3.css";
-import { Link } from "react-router-dom";
 import {
     GameProgressContext,
     type GameProgress,
@@ -42,6 +41,12 @@ function Game3() {
             const result = document.getElementById(
                 "result"
             ) as HTMLParagraphElement;
+            if (result.classList.contains("negative")) {
+                result.classList.remove("negative");
+            }
+            if (!result.classList.contains("positive")) {
+                result.classList.add("positive");
+            }
             result.textContent = "Congratulations! You found all pairs!";
             setProgress((prev: GameProgress) => ({
                 ...prev,
@@ -120,13 +125,13 @@ function Game3() {
     }
 
     return (
-        <div id="game3">
+        <div id="game3" className="game-container">
             <h1>Game 3: Memory card game</h1>
             <p>
                 Welcome to the memory card game! Flip the cards to find matching
                 pairs. Can you remember where they are?
             </p>
-            <div id="cardsContainer">
+            <div id="cards-container">
                 {deck.map((emojie, index) => (
                     <div
                         className={`card ${
@@ -148,7 +153,6 @@ function Game3() {
                 ))}
             </div>
             <p id="result"></p>
-            <Link to="/">exit</Link>
         </div>
     );
 }

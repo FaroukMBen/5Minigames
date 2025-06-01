@@ -1,0 +1,16 @@
+#header-in-game {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+#header-in-game a {
+    font-size: 3em;
+    color: #cfcfcf;
+    align-self: center;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    color: #cfcfcf;
+}
