@@ -1,14 +1,9 @@
-h2 {
-   padding-bottom: 10px;
-   margin-bottom: 20px;
-   text-align: center;
-   color: #CFCFCF;
+#foundWordsContainer {
+   margin-top: 3vw;
 }
 
 h3 {
-   margin-top: 20px;
-   text-align: center;
-   color: #CFCFCF;
+   justify-self: center;
 }
 
 .word-grid {
@@ -18,20 +13,34 @@ h3 {
    border-radius: 8px;
    max-width: 620px;
    margin: 20px auto;
+   padding: 1vw;
 }
 
 .words-to-find-grid {
-   display: grid;
-   grid-template-columns: repeat(5, 1fr);  /* Creates 5 columns */
-   grid-gap: 10px;
-   justify-items: center;
-   margin: 20px auto;
-   width: calc(100% - 60px); /* Adjust the 60px to match the actual padding */
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   margin: 20px 0;
 }
 
 .word-item {
-   text-align: center;
+   background-color: #212121;
    color: #CFCFCF;
+   padding: 10px;
+   border-radius: 10px;
+   text-align: center;
+   transition: background-color 0.2s, color 0.2s;
+   width: 10vw;
+   margin: 1vw;
+   border: 2px solid #ffbe1a;
+}
+
+.word-item.found {
+   background-color: #FFBE1A;
+   color: #000;
+   box-shadow: 0 0 20px 2px #ffbe1a;
+   transition: background-color 0.2s, color 0.2s;
 }
 
 .grid-row {
@@ -42,54 +51,56 @@ h3 {
 .grid-letter {
    width: 50px;
    height: 50px;
-   font-size: 2em; /* Adjusted font size */
-   color: #CFCFCF; /* Adjusted font color */
-   border: none;
-   background-color: #212121; /* Adjusted background color to match the container */
+   font-size: 2em;
+   color: #CFCFCF;
+   background-color: #212121;
    text-align: center;
    line-height: 50px;
    cursor: pointer;
    transition: background-color 0.2s, color 0.2s;
    padding: 0;
-   margin: 0;
+   margin: 2px;
+   border: 2px solid transparent;
+   border-radius: 10px;
 }
 
 .grid-letter:hover {
-   background-color: rgb(69, 69, 69);
-   color: white;
+   border-color: #FFBE1A;
+   transition: background-color 0.2s, color 0.2s, border 0.2s;
 }
 
 .grid-letter.selected {
-   color: green;
+   color: #FFBE1A;
+   border-color: #FFBE1A;
 }
 
 .grid-letter.success {
-   color: #FFBE1A;
+   color: #000;
+   background-color: #FFBE1A;
+   box-shadow: 0 0 20px 2px #ffbe1a;
+   transition: background-color 0.2s, color 0.2s;
+   border-radius: 10px;
 }
 
-/* Mobile View */
-@media only screen and (max-width: 768px) {
-  .word-grid {
-    max-width: 90vw; /* Set a max-width that suits mobile */
-    margin: 10px auto;
-  }
+.grid-letter.error {
+   border-color: #FF0000;
+   box-shadow: 0 0 20px 2px #ff0000;
+   transition: background-color 0.2s, color 0.2s;
+   border-radius: 10px;
+}
 
-  .grid-letter {
-    width: 7.5vw; /* Each letter is 7.5% of the viewport width */
-    height: 7.5vw; /* Same for height to maintain a square */
-    font-size: 3.5vw; /* Adjust font size accordingly */
-    line-height: 7.5vw; /* Center the letter vertically */
-  }
+#submitWord {
+   background-color: #FFBE1A;
+   border: none;
+   border-radius: 4px;
+   color: #212121;
+   cursor: pointer;
+   font-size: 1rem;
+   padding: 10px 20px;
+   transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-  .words-to-find-grid {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjust the min size as needed */
-    justify-items: start;
-    grid-gap: 2px;
-    margin: 0px auto;
-  }
-  
-   html {
-      font-size: 14px; /* Adjust base font size for mobile */
-   }
-  
+#submitWord:hover {
+   background-color: #caa770;
+   transform: scale(1.05);
 }
