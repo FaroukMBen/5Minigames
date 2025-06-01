@@ -1,0 +1,91 @@
+#game1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    background-color: #212121;
+    color: #cfcfcf;
+    margin: 0 10vw 0 10vw;
+    border-radius: 15px;
+}
+
+#game1 h1 {
+    color: #cfcfcf;
+    font-size: clamp(24px, 2dvh, 36px);
+    margin-bottom: 20px;
+}
+
+#game1 p {
+    color: #cfcfcf;
+    font-size: clamp(16px, 1.5dvh, 24px);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#game1 #encryptedMessageContainer {
+    background-image: url('../../assets/images/clownbackgroundpattern.png');
+    background-size: 30dvh;
+    padding: 2dvh;
+    border-radius: 10px;
+    width: 30vw;
+    border: 2px solid #000000;
+}
+
+#game1 #encryptedMessage,
+#game1 #encryptedMessageContainer div svg {
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+#game1 #encryptedMessageContainer div {
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    background-color: #686868;
+    border-radius: 10px;
+    opacity: 0.8;
+    font-size: clamp(16px, 2.5dvh, 24px);
+    text-align: center;
+    font-weight: bold;
+    padding: 1dvh;
+    width: 90%;
+    align-items: center;
+}
+
+#game1 input {
+    width: 29vw;
+    padding: 3dvh;
+    padding-bottom: 5dvh;
+    border: 2px solid #686868;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #cfcfcf;
+    margin: 20px 0;
+}
+
+#game1 input:hover {
+    outline: none;
+    border-color: #000000;
+}
+
+#game1 button {
+    background-color: #ffbe1a;
+    border: none;
+    border-radius: 4px;
+    color: #212121;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#game1 button:hover {
+    background-color: #caa770;
+    transform: scale(1.05);
+}
+
+#game1 #result {
+    color: #ff0000;
+}
