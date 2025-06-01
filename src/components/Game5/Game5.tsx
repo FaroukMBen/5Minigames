@@ -4,7 +4,6 @@ import {
     GameProgressContext,
     type GameProgress,
 } from "../../context/GameprogressContext";
-import { Link } from "react-router-dom";
 
 function Game5() {
     const grid: string[][] = [
@@ -44,10 +43,10 @@ function Game5() {
     >([]);
     const [foundWords, setFoundWords] = useState<string[]>([]);
 
-    const [letterColors, setLetterColors] = useState(
+    const [letterClass, setLetterClass] = useState(
         Array(grid.length)
             .fill(null)
-            .map(() => Array(grid[0].length).fill("#CFCFCF"))
+            .map(() => Array(grid[0].length))
     );
 
     const isAdjacent = (
@@ -72,14 +71,14 @@ function Game5() {
             setSelectedWord((prev) => prev + letter);
             setSelectedPositions((prev) => [...prev, [row, col]]);
 
-            const newColors = [...letterColors];
-            newColors[row][col] = "green";
-            setLetterColors(newColors);
+            const newClass = [...letterClass];
+            newClass[row][col] = "selected";
+            setLetterClass(newClass);
         }
     };
 
     const checkWord = () => {
-        const newColors = [...letterColors];
+        const newClass = [...letterClass];
 
         if (
             wordsToFind.includes(selectedWord) &&
@@ -88,15 +87,18 @@ function Game5() {
             setFoundWords((prev) => [...prev, selectedWord]);
 
             for (const pos of selectedPositions) {
-                newColors[pos[0]][pos[1]] = "gold";
+                newClass[pos[0]][pos[1]] = "success";
             }
         } else {
             for (const pos of selectedPositions) {
-                newColors[pos[0]][pos[1]] = "#CFCFCF";
+                newClass[pos[0]][pos[1]] = "error";
+                setTimeout(() => {
+                    newClass[pos[0]][pos[1]] = "";
+                }, 1000);
             }
         }
 
-        setLetterColors(newColors);
+        setLetterClass(newClass);
         setSelectedWord("");
         setSelectedPositions([]);
 
@@ -111,17 +113,14 @@ function Game5() {
 
     return (
         <div id="game5" className="game-container">
-            <h2>Code Terminology Word Search</h2>
+            <h1>Game 5: Code Terminology Word Search</h1>
             <div className="word-grid">
                 {grid.map((row, rowIndex) => (
                     <div key={rowIndex} className="grid-row">
                         {row.map((letter, colIndex) => (
                             <button
                                 key={colIndex}
-                                className="grid-letter"
-                                style={{
-                                    color: letterColors[rowIndex][colIndex],
-                                }}
+                                className={`grid-letter ${letterClass[rowIndex][colIndex]}`}
                                 onClick={() =>
                                     handleLetterClick(
                                         letter,
@@ -136,31 +135,25 @@ function Game5() {
                     </div>
                 ))}
             </div>
-            <div>
-                <h3>Selected Word: {selectedWord}</h3>
-                <button className="button" onClick={checkWord}>
-                    Submit Word
-                </button>
-            </div>
-            <div>
+            <h3>Selected Word: {selectedWord}</h3>
+            <button id="submitWord" onClick={checkWord}>
+                Submit Word
+            </button>
+            <div id="foundWordsContainer">
                 <h3>Words to find:</h3>
                 <div className="words-to-find-grid">
                     {wordsToFind.map((word) => (
-                        <div key={word} className="word-item">
-                            <p
-                                style={{
-                                    textDecoration: foundWords.includes(word)
-                                        ? "line-through"
-                                        : "none",
-                                }}
-                            >
-                                {word}
-                            </p>
+                        <div
+                            key={word}
+                            className={`word-item${
+                                foundWords.includes(word) ? " found" : ""
+                            }`}
+                        >
+                            <p>{word}</p>
                         </div>
                     ))}
                 </div>
             </div>
-            <Link to="/">exit</Link>
         </div>
     );
 }
