@@ -120,7 +120,7 @@ function Game3() {
     }
 
     return (
-        <div id="game3">
+        <div id="game3" className="game-container">
             <h1>Game 3: Memory card game</h1>
             <p>
                 Welcome to the memory card game! Flip the cards to find matching

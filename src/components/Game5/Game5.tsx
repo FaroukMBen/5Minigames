@@ -110,7 +110,7 @@ function Game5() {
     };
 
     return (
-        <div className="container">
+        <div id="game5" className="game-container">
             <h2>Code Terminology Word Search</h2>
             <div className="word-grid">
                 {grid.map((row, rowIndex) => (
