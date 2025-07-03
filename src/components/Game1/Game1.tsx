@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import {
     GameProgressContext,
     type GameProgress,
-} from "../../context/GameprogressContext";
+} from "../../context/GameprogressContext.tsx";
 import "./Game1.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";

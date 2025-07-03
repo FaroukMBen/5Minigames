@@ -3,7 +3,7 @@ import "./Game3.css";
 import {
     GameProgressContext,
     type GameProgress,
-} from "../../context/GameprogressContext";
+} from "../../context/GameprogressContext.tsx";
 
 function Game3() {
     /**

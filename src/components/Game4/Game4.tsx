@@ -3,7 +3,7 @@ import { useContext } from "react";
 import {
     GameProgressContext,
     type GameProgress,
-} from "../../context/GameprogressContext";
+} from "../../context/GameprogressContext.tsx";
 function Game4() {
     const riddleOptions = [
         ["💻", "Code"],

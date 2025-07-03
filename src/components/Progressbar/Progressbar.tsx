@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GameProgressContext } from "../../context/GameprogressContext";
+import { GameProgressContext } from "../../context/GameprogressContext.tsx";
 import "./Progressbar.css";
 
 function Progressbar() {

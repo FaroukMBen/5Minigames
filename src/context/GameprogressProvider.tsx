@@ -1,6 +1,8 @@
 import { type FC, useState } from "react";
-import { GameProgressContext } from "./GameProgressContext";
-import type { GameProgress } from "./GameProgressContext";
+import {
+    GameProgressContext,
+    type GameProgress,
+} from "./GameprogressContext.tsx";
 
 interface GPProviderProps {
     children: React.ReactNode;

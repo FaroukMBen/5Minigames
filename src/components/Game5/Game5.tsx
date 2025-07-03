@@ -3,7 +3,7 @@ import "./Game5.css";
 import {
     GameProgressContext,
     type GameProgress,
-} from "../../context/GameprogressContext";
+} from "../../context/GameprogressContext.tsx";
 
 function Game5() {
     const grid: string[][] = [

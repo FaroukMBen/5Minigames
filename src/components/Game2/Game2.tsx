@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { GameProgressContext } from "../../context/GameprogressContext";
-import type { GameProgress } from "../../context/GameprogressContext";
+import { GameProgressContext } from "../../context/GameprogressContext.tsx";
+import type { GameProgress } from "../../context/GameprogressContext.tsx";
 import "./Game2.css";
 
 function Game2() {
